@@ -73,6 +73,16 @@ const styles = theme => ({
     paddingTop: "1.5rem!important",
     color: "white",
     overflow: "auto"
+  },
+  avatarImage: {
+    borderRadius: "50%",
+    height:"25px",
+    transform:"translate(-10px,6px)"
+  },
+  smallScreen: {
+    [theme.breakpoints.up('xs')]: {
+      display: 'none',
+    }
   }
 });
 
@@ -192,7 +202,7 @@ class Dashboard extends React.Component {
               fontSize: "1rem"
             }}
           >
-            <span className="noMobile">Hi, {this.props.name}</span>
+            <span className={classes.smallScreen}><img className={classes.avatarImage} src={this.props.avatarImage}/> Hi, {this.props.name}</span>
             <Button
               style={{ marginLeft: "8px" }}
               variant="outlined"
@@ -316,6 +326,7 @@ class Dashboard extends React.Component {
 Dashboard.getInitialProps = async function(ctx, query) {
   const req = ctx.req;
   const user = req && req.session ? req.session.user : null;
+  let avatarImage = user ? `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png` : null;
   let name;
   let logs;
   let hours = 0;
@@ -369,7 +380,8 @@ Dashboard.getInitialProps = async function(ctx, query) {
       name: name,
       logs: logs,
       hours: hours,
-      query: ctx.query.fromCallback
+      query: ctx.query.fromCallback,
+      avatarImage: avatarImage
     };
   }
 };
