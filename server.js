@@ -11,9 +11,9 @@ const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
-const CLIENT_ID = "662868874823335947";
-const CLIENT_SECRET = "xWzqvCviCrVk58yELXvvdmm03kD-74iW";
-const redirect = encodeURIComponent('https://spartalytics.herokuapp.com/callback');
+const CLIENT_ID = "";
+const CLIENT_SECRET = "--";
+const redirect = encodeURIComponent('');
 
 // async/await error catcher
 const catchAsync = fn => (
@@ -41,9 +41,9 @@ app.prepare().then(() => {
     )
 
     server.get('/api/login', (req, res) => {
-        res.redirect(`https://discordapp.com/api/oauth2/authorize?client_id=662868874823335947&redirect_uri=https%3A%2F%2Fspartalytics.herokuapp.com%2Fcallback&response_type=code&scope=identify`)
+        res.redirect(`https://discordapp.com/api/oauth2/authorize?client_id=&redirect_uri=callback&response_type=code&scope=identify`)
     })
-    //this does the oauth exchange, and also saves session data
+
     server.post('/api/callbacks', (req, res) => {
         if (!req.body) throw new Error('NoCodeProvided');
         const code = req.body.code;

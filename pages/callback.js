@@ -21,13 +21,12 @@ class Callback extends React.Component{
         super(props);
     }
     componentDidMount(){
-        //If user pressed 'back' in Discord Oauth panel
         if (!this.props.error){
-            //Oauth code is valid
-            const code = this.props.code
-            const res = fetch('/api/callbacks', {method: 'POST',headers: new Headers({ 'Content-Type': 'application/json' }), body: JSON.stringify({code})}).then(res => res.json().then(json => {
+        const code = this.props.code
+        const res = fetch('/api/callbacks', {method: 'POST',headers: new Headers({ 'Content-Type': 'application/json' }), body: JSON.stringify({code})}).then(res => res.json().then(json => {
             console.log(json)
-            window.open('/dashboard',"_self")}
+            window.open('/dashboard',"_self")
+        }
         ));}else{
             Router.push('/');
         }

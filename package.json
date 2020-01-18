@@ -16,6 +16,7 @@
     "firebase": "^7.6.1",
     "fitty": "^2.2.6",
     "isomorphic-unfetch": "^3.0.0",
+    "moment": "^2.24.0",
     "next": "latest",
     "node-fetch": "^2.6.0",
     "prop-types": "latest",
