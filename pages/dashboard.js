@@ -80,7 +80,7 @@ const styles = theme => ({
     transform:"translate(-10px,6px)"
   },
   smallScreen: {
-    [theme.breakpoints.up('xs')]: {
+    [theme.breakpoints.down('xs')]: {
       display: 'none',
     }
   }
