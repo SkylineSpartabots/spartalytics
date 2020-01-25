@@ -8,6 +8,10 @@ After signing in through Discord Oauth, the client will side-check the hour data
 
 Once signed in, users can see their total amount of hours, the last meeting they attended, upcoming competition, and even a leaderboard of top hours to see where the member stacks up.
 
+## Screenshots
+
+![Signing in](https://i.imgur.com/cfJPrEu.png)
+![Dashboard](https://i.imgur.com/0mwaq77.png)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
