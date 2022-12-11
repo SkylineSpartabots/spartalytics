@@ -11,7 +11,7 @@
     "btoa": "^1.2.1",
     "clsx": "latest",
     "convert-seconds": "^1.0.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-session": "^1.17.0",
     "firebase": "^7.6.1",
     "fitty": "^2.2.6",
