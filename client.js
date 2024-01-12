@@ -1,10 +1,10 @@
 module.exports = {
-    apiKey: "",
-    authDomain: "-.firebaseapp.com",
-    databaseURL: "https://-.firebaseio.com",
-    projectId: "-",
-    storageBucket: "-.appspot.com",
-    messagingSenderId: "",
-    appId: "1::web:"
+    apiKey: process.env.APIKEY,
+    authDomain: process.env.AUTHDOMAIN,
+    databaseURL: process.env.DATABASEURL,
+    projectId: process.env.PROJECTID,
+    storageBucket: process.env.STORAGEBUCKET,
+    messagingSenderId: process.env.MSID,
+    appId: process.env.APPID,
+    measurementId: process.env.MESID
 }
-
